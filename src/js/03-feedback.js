@@ -40,8 +40,7 @@ function onDOMContentLoaded() {
 
 function onSubmitClick(evt) {
     evt.preventDefault();
-    console.log('email:', feedbackFormState.email);
-    console.log('message:', feedbackFormState.message);
+    console.log(feedbackFormState);
     feedbackFormState.email = '';
     feedbackFormState.message = '';
     localStorage.removeItem('feedback-form-state');

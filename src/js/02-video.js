@@ -14,6 +14,10 @@ player.on(
 document.addEventListener('DOMContentLoaded', onHTMLload);
 
 function onHTMLload() {
-    player.setCurrentTime(localStorage.getItem('videoplayer-current-time'));
+    if (localStorage.getItem('videoplayer-current-time') === null) {
+        player.setCurrentTime(0);
+    } else {
+        player.setCurrentTime(localStorage.getItem('videoplayer-current-time'));
+    }
     document.removeEventListener('DOMContentLoaded', onHTMLload);
 }
